@@ -8,10 +8,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from electrum_acm import Wallet, WalletStorage
-from electrum_acm.util import UserCancelled, InvalidPassword
-from electrum_acm.base_wizard import BaseWizard
-from electrum_acm.i18n import _
+from electrum_bzx import Wallet, WalletStorage
+from electrum_bzx.util import UserCancelled, InvalidPassword
+from electrum_bzx.base_wizard import BaseWizard
+from electrum_bzx.i18n import _
 
 from .seed_dialog import SeedLayout, KeysLayout
 from .network_dialog import NetworkChoiceLayout
@@ -24,7 +24,7 @@ class GoBack(Exception):
 
 MSG_GENERATING_WAIT = _("Electrum is generating your addresses, please wait...")
 MSG_ENTER_ANYTHING = _("Please enter a seed phrase, a master key, a list of "
-                       "Actinium addresses, or a list of private keys")
+                       "Bitcoinzero addresses, or a list of private keys")
 MSG_ENTER_SEED_OR_MPK = _("Please enter a seed phrase or a master key (xpub or xprv):")
 MSG_COSIGNER = _("Please enter the master public key of cosigner #%d:")
 MSG_ENTER_PASSWORD = _("Choose a password to encrypt your wallet keys.") + '\n'\
@@ -102,7 +102,7 @@ class InstallWizard(QDialog, MessageBoxMixin, BaseWizard):
     def __init__(self, config, app, plugins, storage):
         BaseWizard.__init__(self, config, storage)
         QDialog.__init__(self, None)
-        self.setWindowTitle('Electrum-Actinium  -  ' + _('Install Wizard'))
+        self.setWindowTitle('Electrum-Bitcoinzero  -  ' + _('Install Wizard'))
         self.app = app
         self.config = config
         # Set for base base class
@@ -147,7 +147,7 @@ class InstallWizard(QDialog, MessageBoxMixin, BaseWizard):
         hbox.setStretchFactor(scroll, 1)
         outer_vbox.addLayout(hbox)
         outer_vbox.addLayout(Buttons(self.back_button, self.next_button))
-        self.set_icon(':icons/electrum-actinium.png')
+        self.set_icon(':icons/electrum-bitcoinzero.png')
         self.show()
         self.raise_()
         self.refresh_gui()  # Need for QT on MacOSX.  Lame.
@@ -174,7 +174,7 @@ class InstallWizard(QDialog, MessageBoxMixin, BaseWizard):
         hbox2.addWidget(self.pw_e)
         hbox2.addStretch()
         vbox.addLayout(hbox2)
-        self.set_layout(vbox, title=_('Electrum-Actinium wallet'))
+        self.set_layout(vbox, title=_('Electrum-Bitcoinzero wallet'))
 
         wallet_folder = os.path.dirname(self.storage.path)
 

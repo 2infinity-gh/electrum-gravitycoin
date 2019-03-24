@@ -5,9 +5,9 @@ from PyInstaller.utils.hooks import collect_data_files, collect_submodules, coll
 import sys
 import os
 
-PACKAGE='Electrum-Actinium'
-PYPKG='electrum_acm'
-MAIN_SCRIPT='electrum-actinium'
+PACKAGE='Electrum-Bitcoinzero'
+PYPKG='electrum_bzx'
+MAIN_SCRIPT='electrum-bitcoinzero'
 ICONS_FILE='electrum.icns'
 
 for i, x in enumerate(sys.argv):

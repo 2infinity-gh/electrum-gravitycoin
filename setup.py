@@ -28,12 +28,12 @@ if platform.system() in ['Linux', 'FreeBSD', 'DragonFly']:
         else:
             usr_share = os.path.expanduser('~/.local/share')
     data_files += [
-        (os.path.join(usr_share, 'applications/'), ['electrum-actinium.desktop']),
-        (os.path.join(usr_share, 'icons/'), ['icons/electrum-actinium.png'])
+        (os.path.join(usr_share, 'applications/'), ['electrum-bitcoinzero.desktop']),
+        (os.path.join(usr_share, 'icons/'), ['icons/electrum-bitcoinzero.png'])
     ]
 
 setup(
-    name="Electrum-Actinium",
+    name="Electrum-Bitcoinzero",
     version=version.ELECTRUM_VERSION,
     install_requires=[
         'pyaes>=0.1a1',
@@ -47,27 +47,27 @@ setup(
         'PySocks>=1.6.6',
     ],
     packages=[
-        'electrum_acm',
-        'electrum_acm_gui',
-        'electrum_acm_gui.qt',
-        'electrum_acm_plugins',
-        'electrum_acm_plugins.audio_modem',
-        'electrum_acm_plugins.cosigner_pool',
-        'electrum_acm_plugins.email_requests',
-        'electrum_acm_plugins.hw_wallet',
-        'electrum_acm_plugins.labels',
-        'electrum_acm_plugins.ledger',
-        'electrum_acm_plugins.trezor',
-        'electrum_acm_plugins.digitalbitbox',
-        'electrum_acm_plugins.virtualkeyboard',
+        'electrum_bzx',
+        'electrum_bzx_gui',
+        'electrum_bzx_gui.qt',
+        'electrum_bzx_plugins',
+        'electrum_bzx_plugins.audio_modem',
+        'electrum_bzx_plugins.cosigner_pool',
+        'electrum_bzx_plugins.email_requests',
+        'electrum_bzx_plugins.hw_wallet',
+        'electrum_bzx_plugins.labels',
+        'electrum_bzx_plugins.ledger',
+        'electrum_bzx_plugins.trezor',
+        'electrum_bzx_plugins.digitalbitbox',
+        'electrum_bzx_plugins.virtualkeyboard',
     ],
     package_dir={
-        'electrum_acm': 'lib',
-        'electrum_acm_gui': 'gui',
-        'electrum_acm_plugins': 'plugins',
+        'electrum_bzx': 'lib',
+        'electrum_bzx_gui': 'gui',
+        'electrum_bzx_plugins': 'plugins',
     },
     package_data={
-        'electrum_acm': [
+        'electrum_bzx': [
             'servers.json',
             'servers_testnet.json',
             'currencies.json',
@@ -78,12 +78,12 @@ setup(
             'locale/*/LC_MESSAGES/electrum.mo',
         ]
     },
-    scripts=['electrum-actinium'],
+    scripts=['electrum-bitcoinzero'],
     data_files=data_files,
-    description="Lightweight Actinium Wallet",
-    author="The Actinium Project",
-    author_email="info@actinium.org",
+    description="Lightweight Bitcoinzero Wallet",
+    author="The Bitcoinzero Project",
+    author_email="info@bitcoinzero.org",
     license="MIT Licence",
-    url="https://actinium.org",
-    long_description="""Lightweight Actinium Wallet"""
+    url="https://bitcoinzero.org",
+    long_description="""Lightweight Bitcoinzero Wallet"""
 )

@@ -30,12 +30,12 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from electrum_acm.bitcoin import base_encode
-from electrum_acm.i18n import _
-from electrum_acm.plugins import run_hook
+from electrum_bzx.bitcoin import base_encode
+from electrum_bzx.i18n import _
+from electrum_bzx.plugins import run_hook
 
-from electrum_acm.util import bfh
-from electrum_acm.wallet import UnrelatedTransactionException
+from electrum_bzx.util import bfh
+from electrum_bzx.wallet import UnrelatedTransactionException
 
 from .util import *
 

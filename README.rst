@@ -1,13 +1,13 @@
-Electrum-Actinium - Lightweight Actinium client
+Electrum-Bitcoinzero - Lightweight Bitcoinzero client
 =======================================
 
 ::
 
   Licence: MIT Licence
   Original Author: Thomas Voegtlin
-  Port Maintainer: The Actinium Project
+  Port Maintainer: The Bitcoinzero Project
   Language: Python
-  Homepage: https://actinium.org
+  Homepage: https://bitcoinzero.org
 
 
 
@@ -27,7 +27,7 @@ Electrum from its root directory, without installing it on your
 system; all the python dependencies are included in the 'packages'
 directory. To run Electrum from its root directory, just do::
 
-    ./electrum-actinium
+    ./electrum-bitcoinzero
 
 You can also install Electrum on your system, by running this command::
 
@@ -64,8 +64,8 @@ Install dependencies::
 
 Check out the code from Github::
 
-    git clone git://github.com/Actinium-project/electrum-actinium.git
-    cd electrum-actinium
+    git clone git://github.com/Bitcoinzero-project/electrum-bitcoinzero.git
+    cd electrum-bitcoinzero
 
 Install lyra2z lib::
 

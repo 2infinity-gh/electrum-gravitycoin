@@ -3,18 +3,18 @@ from kivy.factory import Factory
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 
-from electrum_acm.util import base_units
-from electrum_acm.i18n import languages
-from electrum_acm_gui.kivy.i18n import _
-from electrum_acm.plugins import run_hook
-from electrum_acm import coinchooser
-from electrum_acm.util import fee_levels
+from electrum_bzx.util import base_units
+from electrum_bzx.i18n import languages
+from electrum_bzx_gui.kivy.i18n import _
+from electrum_bzx.plugins import run_hook
+from electrum_bzx import coinchooser
+from electrum_bzx.util import fee_levels
 
 from .choice_dialog import ChoiceDialog
 
 Builder.load_string('''
 #:import partial functools.partial
-#:import _ electrum_acm_gui.kivy.i18n._
+#:import _ electrum_bzx_gui.kivy.i18n._
 
 <SettingsDialog@Popup>
     id: settings
@@ -46,13 +46,13 @@ Builder.load_string('''
                 SettingsItem:
                     bu: app.base_unit
                     title: _('Denomination') + ': ' + self.bu
-                    description: _("Base unit for Actinium amounts.")
+                    description: _("Base unit for Bitcoinzero amounts.")
                     action: partial(root.unit_dialog, self)
                 CardSeparator
                 SettingsItem:
                     status: root.fee_status()
                     title: _('Fees') + ': ' + self.status
-                    description: _("Fees paid to the Actinium miners.")
+                    description: _("Fees paid to the Bitcoinzero miners.")
                     action: partial(root.fee_dialog, self)
                 CardSeparator
                 SettingsItem:

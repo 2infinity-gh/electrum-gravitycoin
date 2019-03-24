@@ -1,4 +1,4 @@
-from electrum_acm.i18n import _
+from electrum_bzx.i18n import _
 
 fullname = 'Ledger Wallet'
 description = 'Provides support for Ledger hardware wallet'

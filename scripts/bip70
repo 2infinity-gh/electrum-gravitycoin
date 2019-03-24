@@ -3,9 +3,9 @@
 
 import tlslite
 
-from electrum_acm.transaction import Transaction
-from electrum_acm import paymentrequest
-from electrum_acm import paymentrequest_pb2 as pb2
+from electrum_bzx.transaction import Transaction
+from electrum_bzx import paymentrequest
+from electrum_bzx import paymentrequest_pb2 as pb2
 
 chain_file = 'mychain.pem'
 cert_file = 'mycert.pem'

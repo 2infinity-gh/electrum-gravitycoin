@@ -1,9 +1,9 @@
 from decimal import Decimal
 _ = lambda x:x
 #from i18n import _
-from electrum_acm import WalletStorage, Wallet
-from electrum_acm.util import format_satoshis, set_verbosity
-from electrum_acm.bitcoin import is_address, COIN, TYPE_ADDRESS
+from electrum_bzx import WalletStorage, Wallet
+from electrum_bzx.util import format_satoshis, set_verbosity
+from electrum_bzx.bitcoin import is_address, COIN, TYPE_ADDRESS
 import getpass, datetime
 
 # minimal fdisk like gui for console usage
@@ -16,7 +16,7 @@ class ElectrumGui:
         self.network = daemon.network
         storage = WalletStorage(config.get_wallet_path())
         if not storage.file_exists:
-            print("Wallet not found. try 'electrum-actinium create'")
+            print("Wallet not found. try 'electrum-bitcoinzero create'")
             exit()
         if storage.is_encrypted():
             password = getpass.getpass('Password:', stream=None)
@@ -163,7 +163,7 @@ class ElectrumGui:
 
     def do_send(self):
         if not is_address(self.str_recipient):
-            print(_('Invalid Actinium address'))
+            print(_('Invalid Bitcoinzero address'))
             return
         try:
             amount = int(Decimal(self.str_amount) * COIN)
@@ -208,12 +208,12 @@ class ElectrumGui:
             print(_('Error'))
 
     def network_dialog(self):
-        print("use 'electrum-actinium setconfig server/proxy' to change your network settings")
+        print("use 'electrum-bitcoinzero setconfig server/proxy' to change your network settings")
         return True
 
 
     def settings_dialog(self):
-        print("use 'electrum-actinium setconfig' to change your settings")
+        print("use 'electrum-bitcoinzero setconfig' to change your settings")
         return True
 
     def password_dialog(self):

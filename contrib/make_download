@@ -15,17 +15,17 @@ string = string.replace("##VERSION_ANDROID##", version_android)
 string = string.replace("##VERSION_APK##", version_apk)
 
 files = {
-    'tgz': "Electrum-Actinium-%s.tar.gz" % version,
-    'zip': "Electrum-Actinium-%s.zip" % version,
-    'mac': "electrum-actinium-%s.dmg" % version_mac,
-    'win': "electrum-actinium-%s.exe" % version_win,
-    'win_setup': "electrum-actinium-%s-setup.exe" % version_win,
-    'win_portable': "electrum-actinium-%s-portable.exe" % version_win,
+    'tgz': "Electrum-Bitcoinzero-%s.tar.gz" % version,
+    'zip': "Electrum-Bitcoinzero-%s.zip" % version,
+    'mac': "electrum-bitcoinzero-%s.dmg" % version_mac,
+    'win': "electrum-bitcoinzero-%s.exe" % version_win,
+    'win_setup': "electrum-bitcoinzero-%s-setup.exe" % version_win,
+    'win_portable': "electrum-bitcoinzero-%s-portable.exe" % version_win,
 }
 
 for k, n in files.items():
     path = "dist/%s"%n
-    link = "https://download.electrum-actinium.org/%s"%n
+    link = "https://download.electrum-bitcoinzero.org/%s"%n
     if not os.path.exists(path):
         os.system("wget -q %s -O %s" % (link, path))
     if not os.path.getsize(path):
