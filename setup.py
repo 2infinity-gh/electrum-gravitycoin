@@ -81,9 +81,9 @@ setup(
     scripts=['electrum-bitcoinzero'],
     data_files=data_files,
     description="Lightweight Bitcoinzero Wallet",
-    author="The Bitcoinzero Project",
-    author_email="info@bitcoinzero.org",
+    author="Bitcoinzero",
+    author_email="contact@bitcoinzerox.net",
     license="MIT Licence",
-    url="https://bitcoinzero.org",
+    url="https://bitcoinzerox.net",
     long_description="""Lightweight Bitcoinzero Wallet"""
 )

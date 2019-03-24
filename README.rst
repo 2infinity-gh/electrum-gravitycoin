@@ -7,7 +7,7 @@ Electrum-Bitcoinzero - Lightweight Bitcoinzero client
   Original Author: Thomas Voegtlin
   Port Maintainer: The Bitcoinzero Project
   Language: Python
-  Homepage: https://bitcoinzero.org
+  Homepage: https://bitcoinzerox.net
 
 
 

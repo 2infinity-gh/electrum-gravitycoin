@@ -11,9 +11,9 @@ lyra2z_hash_module = Extension('lyra2z_hash',
 
 setup (name = 'lyra2z_hash',
        version = '0.1.0',
-       author_email = 'info@bitcoinzero.org',
+       author_email = 'contact@bitcoinzerox.net',
        author = 'bitcoinzero',
-       url = 'https://github.com/Bitcoinzero-project/Bitcoinzero',
+       url = 'https://github.com/BitcoinzeroOfficial',
        description = 'Bindings for Lyra2Z proof of work used by Bitcoinzero',
        ext_modules = [lyra2z_hash_module])
 

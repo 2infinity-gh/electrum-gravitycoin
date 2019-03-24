@@ -431,12 +431,12 @@ def time_difference(distance_in_time, include_seconds):
         return "over %d years" % (round(distance_in_minutes / 525600))
 
 mainnet_block_explorers = {
-    'explorer.actinum.org': ('https://explorer2.bitcoinzero.org',
+    'explorer.actinum.org': ('https://chainz.cryptoid.info/bzx/',
                         {'tx': 'tx', 'addr': 'address'})
 }
 
 testnet_block_explorers = {
-    'testexplorer.bitcoinzero.org': ('http://testexplorer.bitcoinzero.org',
+    'testexplorer.bitcoinzerox.net': ('http://testexplorer.bitcoinzerox.net',
                         {'tx': 'tx', 'addr': 'address'}),
 }
 
