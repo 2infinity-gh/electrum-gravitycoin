@@ -41,8 +41,8 @@ class BitcoinMainnet:
 
     TESTNET = False
     WIF_PREFIX = 0xd2
-    ADDRTYPE_P2PKH = 40
-    ADDRTYPE_P2SH = 10
+    ADDRTYPE_P2PKH = 0x28
+    ADDRTYPE_P2SH = 0x0a
     SEGWIT_HRP = "gxx"
     GENESIS = "322bad477efb4b33fa4b1f0b2861eaf543c61068da9898a95062fdb02ada486f"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}

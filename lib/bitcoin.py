@@ -96,8 +96,8 @@ class NetworkConstants:
     def set_mainnet(cls):
         cls.TESTNET = False
         cls.WIF_PREFIX = 210
-        cls.ADDRTYPE_P2PKH = 75  # 0x75
-        cls.ADDRTYPE_P2SH = 34  # 0x34
+        cls.ADDRTYPE_P2PKH = 40 # 0x28
+        cls.ADDRTYPE_P2SH = 10 # 0x0a
         cls.SEGWIT_HRP = "gxx"
         cls.GENESIS = "322bad477efb4b33fa4b1f0b2861eaf543c61068da9898a95062fdb02ada486f"
         cls.DEFAULT_PORTS = {'t': '50001', 's': '50002'}
