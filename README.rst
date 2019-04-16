@@ -4,10 +4,10 @@ Electrum-Gravitycoin - Lightweight Gravitycoin client
 ::
 
   Licence: MIT Licence
-  Original Author: Thomas Voegtlin
-  Port Maintainer: The Gravitycoin Project
+  Original Author: 2infinity
+  Port Maintainer: Gravitycoin
   Language: Python
-  Homepage: https://gravitycoinx.net
+  Homepage: https://gravitycoin.io
 
 
 
