@@ -1,11 +1,5 @@
 {
-    "electrum.gravitycoinx.net": {
-        "pruning": "-",
-        "s": "50002",
-        "t": "50001",
-        "version": "1.1"
-    },
-	"electrum2.gravitycoinx.net": {
+    "electrumx.xecur.nl": {
         "pruning": "-",
         "s": "50002",
         "t": "50001",
