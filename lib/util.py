@@ -40,7 +40,7 @@ def inv_dict(d):
     return {v: k for k, v in d.items()}
 
 
-base_units = {'BZX':8, 'mBZX':5, 'uXZC':2}
+base_units = {'GXX':8, 'mGXX':5, 'uXZC':2}
 fee_levels = [_('Within 25 blocks'), _('Within 10 blocks'), _('Within 5 blocks'), _('Within 2 blocks'), _('In the next block')]
 
 def normalize_version(v):
@@ -237,7 +237,7 @@ def android_data_dir():
     return PythonActivity.mActivity.getFilesDir().getPath() + '/data'
 
 def android_headers_dir():
-    d = android_ext_dir() + '/org.electrum_bzx.electrum_bzx'
+    d = android_ext_dir() + '/org.electrum_gxx.electrum_gxx'
     if not os.path.exists(d):
         os.mkdir(d)
     return d
@@ -246,7 +246,7 @@ def android_check_data_dir():
     """ if needed, move old directory to sandbox """
     ext_dir = android_ext_dir()
     data_dir = android_data_dir()
-    old_electrum_dir = ext_dir + '/electrum-bitcoinzero'
+    old_electrum_dir = ext_dir + '/electrum-gravitycoin'
     if not os.path.exists(data_dir) and os.path.exists(old_electrum_dir):
         import shutil
         new_headers_path = android_headers_dir() + '/blockchain_headers'
@@ -327,11 +327,11 @@ def user_dir():
     if 'ANDROID_DATA' in os.environ:
         return android_check_data_dir()
     elif os.name == 'posix':
-        return os.path.join(os.environ["HOME"], ".electrum-bitcoinzero")
+        return os.path.join(os.environ["HOME"], ".electrum-gravitycoin")
     elif "APPDATA" in os.environ:
-        return os.path.join(os.environ["APPDATA"], "Electrum-Bitcoinzero")
+        return os.path.join(os.environ["APPDATA"], "Electrum-Gravitycoin")
     elif "LOCALAPPDATA" in os.environ:
-        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-Bitcoinzero")
+        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-Gravitycoin")
     else:
         #raise Exception("No home directory found in environment variables.")
         return
@@ -431,12 +431,12 @@ def time_difference(distance_in_time, include_seconds):
         return "over %d years" % (round(distance_in_minutes / 525600))
 
 mainnet_block_explorers = {
-    'cryptoid.info': ('https://chainz.cryptoid.info/bzx/',
+    'cryptoid.info': ('https://chainz.cryptoid.info/gxx/',
                         {'tx': 'tx', 'addr': 'address'})
 }
 
 testnet_block_explorers = {
-    'testexplorer.bitcoinzerox.net': ('http://testexplorer.bitcoinzerox.net',
+    'testexplorer.gravitycoinx.net': ('http://testexplorer.gravitycoinx.net',
                         {'tx': 'tx', 'addr': 'address'}),
 }
 
@@ -445,7 +445,7 @@ def block_explorer_info():
     return testnet_block_explorers if bitcoin.NetworkConstants.TESTNET else mainnet_block_explorers
 
 def block_explorer(config):
-    return config.get('block_explorer', 'explorer.bitcoinzero.org')
+    return config.get('block_explorer', 'explorer.gravitycoin.org')
 
 def block_explorer_tuple(config):
     return block_explorer_info().get(block_explorer(config))
@@ -470,12 +470,12 @@ def parse_URI(uri, on_pr=None):
 
     if ':' not in uri:
         if not bitcoin.is_address(uri):
-            raise BaseException("Not a bitcoinzero address")
+            raise BaseException("Not a gravitycoin address")
         return {'address': uri}
 
     u = urllib.parse.urlparse(uri)
-    if u.scheme != 'bitcoinzero':
-        raise BaseException("Not a bitcoinzero URI")
+    if u.scheme != 'gravitycoin':
+        raise BaseException("Not a gravitycoin URI")
     address = u.path
 
     # python for android fails to parse query
@@ -492,7 +492,7 @@ def parse_URI(uri, on_pr=None):
     out = {k: v[0] for k, v in pq.items()}
     if address:
         if not bitcoin.is_address(address):
-            raise BaseException("Invalid bitcoinzero address:" + address)
+            raise BaseException("Invalid gravitycoin address:" + address)
         out['address'] = address
     if 'amount' in out:
         am = out['amount']
@@ -542,7 +542,7 @@ def create_URI(addr, amount, message):
         query.append('amount=%s'%format_satoshis_plain(amount))
     if message:
         query.append('message=%s'%urllib.parse.quote(message))
-    p = urllib.parse.ParseResult(scheme='bitcoinzero', netloc='', path=addr, params='', query='&'.join(query), fragment='')
+    p = urllib.parse.ParseResult(scheme='gravitycoin', netloc='', path=addr, params='', query='&'.join(query), fragment='')
     return urllib.parse.urlunparse(p)
 
 

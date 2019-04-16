@@ -4,12 +4,12 @@ from PyQt5.Qt import QDialog, QLineEdit, QTextEdit, QVBoxLayout, QLabel
 import PyQt5.QtCore as QtCore
 from PyQt5.QtWidgets import *
 
-from electrum_bzx.i18n import _
-from electrum_bzx.qt.util import *
-from electrum_bzx.util import print_msg
+from electrum_gxx.i18n import _
+from electrum_gxx.qt.util import *
+from electrum_gxx.util import print_msg
 
 import os, hashlib, websocket, logging, json, copy
-from electrum_bzx_gui.qt.qrcodewidget import QRCodeWidget
+from electrum_gxx_gui.qt.qrcodewidget import QRCodeWidget
 from btchip.btchip import *
 
 DEBUG = False

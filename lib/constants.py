@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Electrum - lightweight Bitcoinzero client
+# Electrum - lightweight Gravitycoin client
 # Copyright (C) 2018 The Electrum developers
 #
 # Permission is hereby granted, free of charge, to any person
@@ -43,7 +43,7 @@ class BitcoinMainnet:
     WIF_PREFIX = 0x2d
     ADDRTYPE_P2PKH = 75
     ADDRTYPE_P2SH = 34
-    SEGWIT_HRP = "bzx"
+    SEGWIT_HRP = "gxx"
     GENESIS = "322bad477efb4b33fa4b1f0b2861eaf543c61068da9898a95062fdb02ada486f"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
     DEFAULT_SERVERS = read_json('servers.json', {})
@@ -72,7 +72,7 @@ class BitcoinTestnet:
     WIF_PREFIX = 0x80
     ADDRTYPE_P2PKH = 43
     ADDRTYPE_P2SH = 196
-    SEGWIT_HRP = "tbzx"
+    SEGWIT_HRP = "tgxx"
     GENESIS = "7c617cc84dc2bff1497836216d6b850cc4e871359ab1afc2d19ef099f9f81f1b"
     DEFAULT_PORTS = {'t': '51001', 's': '51002'}
     DEFAULT_SERVERS = read_json('servers_testnet.json', {})
@@ -97,7 +97,7 @@ class BitcoinTestnet:
 
 class BitcoinRegtest(BitcoinTestnet):
 
-    SEGWIT_HRP = "rbzx"
+    SEGWIT_HRP = "rgxx"
     GENESIS = "f05cd14f31c18d661efb3dc152ddbdf0da1305c73beac0a9e348013c3b3f8ad2"
     DEFAULT_SERVERS = read_json('servers_regtest.json', {})
     CHECKPOINTS = []

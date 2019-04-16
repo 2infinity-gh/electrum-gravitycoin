@@ -1,4 +1,4 @@
-from electrum_bzx.util import print_msg, print_error, raw_input
+from electrum_gxx.util import print_msg, print_error, raw_input
 
 class CmdLineHandler:
 

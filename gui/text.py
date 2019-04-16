@@ -3,10 +3,10 @@ import curses, datetime, locale
 from decimal import Decimal
 import getpass
 
-import electrum_bzx as electrum
-from electrum_bzx.util import format_satoshis, set_verbosity
-from electrum_bzx.bitcoin import is_address, COIN, TYPE_ADDRESS
-from electrum_bzx import Wallet, WalletStorage
+import electrum_gxx as electrum
+from electrum_gxx.util import format_satoshis, set_verbosity
+from electrum_gxx.bitcoin import is_address, COIN, TYPE_ADDRESS
+from electrum_gxx import Wallet, WalletStorage
 
 _ = lambda x:x
 
@@ -20,7 +20,7 @@ class ElectrumGui:
         self.network = daemon.network
         storage = WalletStorage(config.get_wallet_path())
         if not storage.file_exists():
-            print("Wallet not found. try 'electrum-bitcoinzero create'")
+            print("Wallet not found. try 'electrum-gravitycoin create'")
             exit()
         if storage.is_encrypted():
             password = getpass.getpass('Password:', stream=None)
@@ -320,7 +320,7 @@ class ElectrumGui:
 
     def do_send(self):
         if not is_address(self.str_recipient):
-            self.show_message(_('Invalid Bitcoinzero address'))
+            self.show_message(_('Invalid Gravitycoin address'))
             return
         try:
             amount = int(Decimal(self.str_amount) * COIN)

@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = Electrum-Bitcoinzero
+title = Electrum-Gravitycoin
 
 # (str) Package name
-package.name = Electrum_Bitcoinzero
+package.name = Electrum_Gravitycoin
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.electrum_bzx
+package.domain = org.electrum_gxx
 
 # (str) Source code where the main.py live
 source.dir = .

@@ -3,7 +3,7 @@
 Python C module for lyra2z hashing 
 ----------------------------------
 
-Notes for Bitcoinzero:
+Notes for Gravitycoin:
 ----------------
 
 Module: lyra2z_hash
@@ -14,8 +14,8 @@ From a previous readme from ocminer (updated):
 
 Requirements:
 -------------
-In order to run P2Pool and other Python based pools with the Bitcoinzero network, you would need to build and install the
-lyra2z_hash module for Python that includes the lyra2z proof of work code that Bitcoinzero uses for hashes.
+In order to run P2Pool and other Python based pools with the Gravitycoin network, you would need to build and install the
+lyra2z_hash module for Python that includes the lyra2z proof of work code that Gravitycoin uses for hashes.
 
 Linux:
 

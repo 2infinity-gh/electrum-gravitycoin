@@ -28,12 +28,12 @@ if platform.system() in ['Linux', 'FreeBSD', 'DragonFly']:
         else:
             usr_share = os.path.expanduser('~/.local/share')
     data_files += [
-        (os.path.join(usr_share, 'applications/'), ['electrum-bitcoinzero.desktop']),
-        (os.path.join(usr_share, 'icons/'), ['icons/electrum-bitcoinzero.png'])
+        (os.path.join(usr_share, 'applications/'), ['electrum-gravitycoin.desktop']),
+        (os.path.join(usr_share, 'icons/'), ['icons/electrum-gravitycoin.png'])
     ]
 
 setup(
-    name="Electrum-Bitcoinzero",
+    name="Electrum-Gravitycoin",
     version=version.ELECTRUM_VERSION,
     install_requires=[
         'pyaes>=0.1a1',
@@ -47,27 +47,27 @@ setup(
         'PySocks>=1.6.6',
     ],
     packages=[
-        'electrum_bzx',
-        'electrum_bzx_gui',
-        'electrum_bzx_gui.qt',
-        'electrum_bzx_plugins',
-        'electrum_bzx_plugins.audio_modem',
-        'electrum_bzx_plugins.cosigner_pool',
-        'electrum_bzx_plugins.email_requests',
-        'electrum_bzx_plugins.hw_wallet',
-        'electrum_bzx_plugins.labels',
-        'electrum_bzx_plugins.ledger',
-        'electrum_bzx_plugins.trezor',
-        'electrum_bzx_plugins.digitalbitbox',
-        'electrum_bzx_plugins.virtualkeyboard',
+        'electrum_gxx',
+        'electrum_gxx_gui',
+        'electrum_gxx_gui.qt',
+        'electrum_gxx_plugins',
+        'electrum_gxx_plugins.audio_modem',
+        'electrum_gxx_plugins.cosigner_pool',
+        'electrum_gxx_plugins.email_requests',
+        'electrum_gxx_plugins.hw_wallet',
+        'electrum_gxx_plugins.labels',
+        'electrum_gxx_plugins.ledger',
+        'electrum_gxx_plugins.trezor',
+        'electrum_gxx_plugins.digitalbitbox',
+        'electrum_gxx_plugins.virtualkeyboard',
     ],
     package_dir={
-        'electrum_bzx': 'lib',
-        'electrum_bzx_gui': 'gui',
-        'electrum_bzx_plugins': 'plugins',
+        'electrum_gxx': 'lib',
+        'electrum_gxx_gui': 'gui',
+        'electrum_gxx_plugins': 'plugins',
     },
     package_data={
-        'electrum_bzx': [
+        'electrum_gxx': [
             'servers.json',
             'servers_testnet.json',
             'currencies.json',
@@ -78,12 +78,12 @@ setup(
             'locale/*/LC_MESSAGES/electrum.mo',
         ]
     },
-    scripts=['electrum-bitcoinzero'],
+    scripts=['electrum-gravitycoin'],
     data_files=data_files,
-    description="Lightweight Bitcoinzero Wallet",
-    author="Bitcoinzero",
-    author_email="contact@bitcoinzerox.net",
+    description="Lightweight Gravitycoin Wallet",
+    author="Gravitycoin",
+    author_email="contact@gravitycoinx.net",
     license="MIT Licence",
-    url="https://bitcoinzerox.net",
-    long_description="""Lightweight Bitcoinzero Wallet"""
+    url="https://gravitycoinx.net",
+    long_description="""Lightweight Gravitycoin Wallet"""
 )

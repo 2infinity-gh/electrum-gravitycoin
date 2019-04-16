@@ -1,23 +1,23 @@
-name: electrum-bitcoinzero
+name: electrum-gravitycoin
 version: master
-summary: Bitcoinzero thin client
+summary: Gravitycoin thin client
 description: |
-  Lightweight Bitcoinzero client
+  Lightweight Gravitycoin client
 
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: strict
 
 apps:
-  electrum-bzx:
-    command: desktop-launch electrum-bitcoinzero
+  electrum-gxx:
+    command: desktop-launch electrum-gravitycoin
     plugs: [network, network-bind, x11, unity7]
 
 parts:
-  electrum-bzx:
+  electrum-gxx:
     source: .
     plugin: python
     python-version: python3
     stage-packages: [python3-pyqt5]
     build-packages: [pyqt5-dev-tools]
-    install: pyrcc5 icons.qrc -o $SNAPCRAFT_PART_INSTALL/lib/python3.5/site-packages/electrum_bzx_gui/qt/icons_rc.py
+    install: pyrcc5 icons.qrc -o $SNAPCRAFT_PART_INSTALL/lib/python3.5/site-packages/electrum_gxx_gui/qt/icons_rc.py
     after: [desktop-qt5]

@@ -6,8 +6,8 @@
 ;--------------------------------
 ;Variables
 
-  !define PRODUCT_NAME "Electrum-Bitcoinzero"
-  !define PRODUCT_WEB_SITE "https://github.com/zcoinofficial/electrum-bitcoinzero"
+  !define PRODUCT_NAME "Electrum-Gravitycoin"
+  !define PRODUCT_WEB_SITE "https://github.com/2infinity-gh/electrum-gravitycoin"
   !define PRODUCT_PUBLISHER "Electrum Technologies GmbH"
   !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 
@@ -16,7 +16,7 @@
 
   ;Name and file
   Name "${PRODUCT_NAME}"
-  OutFile "dist/electrum-bitcoinzero-setup.exe"
+  OutFile "dist/electrum-gravitycoin-setup.exe"
 
   ;Default installation folder
   InstallDir "$PROGRAMFILES\${PRODUCT_NAME}"
@@ -72,7 +72,7 @@
   !define MUI_ABORTWARNING
   !define MUI_ABORTWARNING_TEXT "Are you sure you wish to abort the installation of ${PRODUCT_NAME}?"
   
-  !define MUI_ICON "tmp\electrum-bitcoinzero\icons\electrum.ico"
+  !define MUI_ICON "tmp\electrum-gravitycoin\icons\electrum.ico"
   
 ;--------------------------------
 ;Pages
@@ -110,7 +110,7 @@ Section
   Delete "$SMPROGRAMS\${PRODUCT_NAME}\*.*"
   
   ;Files to pack into the installer
-  File /r "dist\electrum-bitcoinzero\*.*"
+  File /r "dist\electrum-gravitycoin\*.*"
   File "..\..\icons\electrum.ico"
 
   ;Store installation folder
@@ -122,21 +122,21 @@ Section
 
   ;Create desktop shortcut
   DetailPrint "Creating desktop shortcut..."
-  CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-bitcoinzero-${PRODUCT_VERSION}.exe" ""
+  CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-gravitycoin-${PRODUCT_VERSION}.exe" ""
 
   ;Create start-menu items
   DetailPrint "Creating start-menu items..."
   CreateDirectory "$SMPROGRAMS\${PRODUCT_NAME}"
   CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-bitcoinzero-${PRODUCT_VERSION}.exe" "" "$INSTDIR\electrum-bitcoinzero-${PRODUCT_VERSION}.exe" 0
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME} Testnet.lnk" "$INSTDIR\electrum-bitcoinzero-${PRODUCT_VERSION}.exe" "--testnet" "$INSTDIR\electrum-bitcoinzero-${PRODUCT_VERSION}.exe" 0
+  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-gravitycoin-${PRODUCT_VERSION}.exe" "" "$INSTDIR\electrum-gravitycoin-${PRODUCT_VERSION}.exe" 0
+  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME} Testnet.lnk" "$INSTDIR\electrum-gravitycoin-${PRODUCT_VERSION}.exe" "--testnet" "$INSTDIR\electrum-gravitycoin-${PRODUCT_VERSION}.exe" 0
 
 
   ;Links bitcoin: URI's to Electrum
-  WriteRegStr HKCU "Software\Classes\bitcoinzero" "" "URL:bitcoinzero Protocol"
-  WriteRegStr HKCU "Software\Classes\bitcoinzero" "URL Protocol" ""
-  WriteRegStr HKCU "Software\Classes\bitcoinzero" "DefaultIcon" "$\"$INSTDIR\electrum.ico, 0$\""
-  WriteRegStr HKCU "Software\Classes\bitcoinzero\shell\open\command" "" "$\"$INSTDIR\electrum-bitcoinzero-${PRODUCT_VERSION}.exe$\" $\"%1$\""
+  WriteRegStr HKCU "Software\Classes\gravitycoin" "" "URL:gravitycoin Protocol"
+  WriteRegStr HKCU "Software\Classes\gravitycoin" "URL Protocol" ""
+  WriteRegStr HKCU "Software\Classes\gravitycoin" "DefaultIcon" "$\"$INSTDIR\electrum.ico, 0$\""
+  WriteRegStr HKCU "Software\Classes\gravitycoin\shell\open\command" "" "$\"$INSTDIR\electrum-gravitycoin-${PRODUCT_VERSION}.exe$\" $\"%1$\""
 
   ;Adds an uninstaller possibilty to Windows Uninstall or change a program section
   WriteRegStr HKCU "${PRODUCT_UNINST_KEY}" "DisplayName" "$(^Name)"
@@ -167,7 +167,7 @@ Section "Uninstall"
   Delete "$SMPROGRAMS\${PRODUCT_NAME}\*.*"
   RMDir  "$SMPROGRAMS\${PRODUCT_NAME}"
   
-  DeleteRegKey HKCU "Software\Classes\bitcoinzero"
+  DeleteRegKey HKCU "Software\Classes\gravitycoin"
   DeleteRegKey HKCU "Software\${PRODUCT_NAME}"
   DeleteRegKey HKCU "${PRODUCT_UNINST_KEY}"
 SectionEnd

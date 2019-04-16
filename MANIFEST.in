@@ -1,9 +1,9 @@
 include LICENCE RELEASE-NOTES AUTHORS
 include README.rst
-include electrum-bitcoinzero.conf.sample
-include electrum-bitcoinzero.desktop
+include electrum-gravitycoin.conf.sample
+include electrum-gravitycoin.desktop
 include *.py
-include electrum-bitcoinzero
+include electrum-gravitycoin
 recursive-include lib *.py
 recursive-include gui *.py
 recursive-include plugins *.py

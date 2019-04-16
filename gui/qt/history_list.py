@@ -25,11 +25,11 @@
 
 import webbrowser
 
-from electrum_bzx.wallet import UnrelatedTransactionException
+from electrum_gxx.wallet import UnrelatedTransactionException
 from .util import *
-from electrum_bzx.i18n import _
-from electrum_bzx.util import block_explorer_URL
-from electrum_bzx.util import timestamp_to_datetime, profiler
+from electrum_gxx.i18n import _
+from electrum_gxx.util import block_explorer_URL
+from electrum_gxx.util import timestamp_to_datetime, profiler
 
 
 # note: this list needs to be kept in sync with another in kivy

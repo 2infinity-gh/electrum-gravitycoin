@@ -74,9 +74,9 @@ TPUB_HEADERS = {
     'standard': 0x043587cf
 }
 
-# class Bitcoinzero(Coin):
-#     NAME = "Bitcoinzero"
-#     SHORTNAME = "BZX"
+# class Gravitycoin(Coin):
+#     NAME = "Gravitycoin"
+#     SHORTNAME = "GXX"
 #     NET = "mainnet"
 #     P2PKH_VERBYTE = bytes.fromhex("75")
 #     P2SH_VERBYTES = [bytes.fromhex("34")]
@@ -98,7 +98,7 @@ class NetworkConstants:
         cls.WIF_PREFIX = 210
         cls.ADDRTYPE_P2PKH = 75  # 0x75
         cls.ADDRTYPE_P2SH = 34  # 0x34
-        cls.SEGWIT_HRP = "bzx"
+        cls.SEGWIT_HRP = "gxx"
         cls.GENESIS = "322bad477efb4b33fa4b1f0b2861eaf543c61068da9898a95062fdb02ada486f"
         cls.DEFAULT_PORTS = {'t': '50001', 's': '50002'}
         cls.DEFAULT_SERVERS = read_json('servers.json', {})
@@ -110,7 +110,7 @@ class NetworkConstants:
         cls.WIF_PREFIX = 171
         cls.ADDRTYPE_P2PKH = 43
         cls.ADDRTYPE_P2SH = 196
-        cls.SEGWIT_HRP = "tbzx"
+        cls.SEGWIT_HRP = "tgxx"
         cls.GENESIS = "7c617cc84dc2bff1497836216d6b850cc4e871359ab1afc2d19ef099f9f81f1b"
         cls.DEFAULT_PORTS = {'t':'51001', 's':'51002'}
         cls.DEFAULT_SERVERS = read_json('servers_testnet.json', {})

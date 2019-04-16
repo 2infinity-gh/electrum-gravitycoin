@@ -40,11 +40,11 @@ from PyQt5.QtCore import *
 import PyQt5.QtGui as QtGui
 from PyQt5.QtWidgets import (QVBoxLayout, QLabel, QGridLayout, QLineEdit)
 
-from electrum_bzx.plugins import BasePlugin, hook
-from electrum_bzx.paymentrequest import PaymentRequest
-from electrum_bzx.i18n import _
-from electrum_bzx_gui.qt.util import EnterButton, Buttons, CloseButton
-from electrum_bzx_gui.qt.util import OkButton, WindowModalDialog
+from electrum_gxx.plugins import BasePlugin, hook
+from electrum_gxx.paymentrequest import PaymentRequest
+from electrum_gxx.i18n import _
+from electrum_gxx_gui.qt.util import EnterButton, Buttons, CloseButton
+from electrum_gxx_gui.qt.util import OkButton, WindowModalDialog
 
 
 class Processor(threading.Thread):
@@ -72,7 +72,7 @@ class Processor(threading.Thread):
                 p = [p]
                 continue
             for item in p:
-                if item.get_content_type() == "application/bitcoinzero-paymentrequest":
+                if item.get_content_type() == "application/gravitycoin-paymentrequest":
                     pr_str = item.get_payload()
                     pr_str = base64.b64decode(pr_str)
                     self.on_receive(pr_str)
@@ -91,10 +91,10 @@ class Processor(threading.Thread):
         msg['Subject'] = message
         msg['To'] = recipient
         msg['From'] = self.username
-        part = MIMEBase('application', "bitcoinzero-paymentrequest")
+        part = MIMEBase('application', "gravitycoin-paymentrequest")
         part.set_payload(payment_request)
         encode_base64(part)
-        part.add_header('Content-Disposition', 'attachment; filename="payreq.bzx"')
+        part.add_header('Content-Disposition', 'attachment; filename="payreq.gxx"')
         msg.attach(part)
         s = smtplib.SMTP_SSL(self.imap_server, timeout=2)
         s.login(self.username, self.password)
@@ -143,7 +143,7 @@ class Plugin(BasePlugin):
         menu.addAction(_("Send via e-mail"), lambda: self.send(window, addr))
 
     def send(self, window, addr):
-        from electrum_bzx import paymentrequest
+        from electrum_gxx import paymentrequest
         r = window.wallet.receive_requests.get(addr)
         message = r.get('memo', '')
         if r.get('signature'):

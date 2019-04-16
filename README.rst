@@ -1,13 +1,13 @@
-Electrum-Bitcoinzero - Lightweight Bitcoinzero client
+Electrum-Gravitycoin - Lightweight Gravitycoin client
 =======================================
 
 ::
 
   Licence: MIT Licence
   Original Author: Thomas Voegtlin
-  Port Maintainer: The Bitcoinzero Project
+  Port Maintainer: The Gravitycoin Project
   Language: Python
-  Homepage: https://bitcoinzerox.net
+  Homepage: https://gravitycoinx.net
 
 
 
@@ -27,7 +27,7 @@ Electrum from its root directory, without installing it on your
 system; all the python dependencies are included in the 'packages'
 directory. To run Electrum from its root directory, just do::
 
-    ./electrum-bitcoinzero
+    ./electrum-gravitycoin
 
 You can also install Electrum on your system, by running this command::
 
@@ -64,8 +64,8 @@ Install dependencies::
 
 Check out the code from Github::
 
-    git clone git://github.com/Bitcoinzero-project/electrum-bitcoinzero.git
-    cd electrum-bitcoinzero
+    git clone git://github.com/2infinity-gh/electrum-gravitycoin.git
+    cd electrum-gravitycoin
 
 Install lyra2z lib::
 

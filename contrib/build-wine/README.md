@@ -28,7 +28,7 @@ $ wine --version
 or
 
 ```
-$ pbzxan -S wine gnupg
+$ pgxxan -S wine gnupg
 $ wine --version
  wine-2.21
 ```
